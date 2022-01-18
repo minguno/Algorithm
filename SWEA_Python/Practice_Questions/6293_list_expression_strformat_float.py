@@ -1,9 +1,6 @@
 # 3.14로는 출력값이 달라서 라이브러리 불러오기
 from math import pi
 
-# 함수를 이용하여 콤마로 구분된 입력값 리스트 생성
-# L = list(map(int, input().split(', ')))
-
 # 리스트 내포 기능을 이용하여 콤마로 구분해 입력받은 리스트 생성
 circumference = [2 * pi * int(i) for i in input().split(', ')]
 
