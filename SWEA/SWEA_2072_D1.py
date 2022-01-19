@@ -1,12 +1,18 @@
-import math
+# test case의 개수
+N = int(input())
 
-# test case 입력받은 수
-T = int(input())
+# 입력된 test case 수 만큼 반복되는 전체 작업
+for i in range(N):
 
-# T만큼 반복되는 작업
-for i in range(1, T + 1):
-    # 입력 받은 10개의 스트링을 공백 기준으로 나눠 정수화 한 다음 리스트에 넣기
+    # 입력받은 수를 공백 기준으로 분리해서 각각 숫자로 치환 후 리스트로 자료형 지정
     numbers = list(map(int, input().split()))
-    # 평균을 담을 변수 생성
-    mean = round(sum(numbers) / len(numbers))
-    print('#{} {}'.format(i, mean))
+    odd_total = 0
+
+    # numbers를 순회하면서
+    for num in numbers:
+
+        # 홀수만 하나씩 꺼내어 새 변수에 저장
+        if num % 2 == 1:
+            odd_total += num
+
+    print("#{0} {1}".format(i + 1, odd_total))
