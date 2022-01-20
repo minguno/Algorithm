@@ -1,6 +1,6 @@
-T = int(input())
+import sys
 
-for i in range(T):
-    N = list(map(int, input().split()))
-    sum = N[0] + N[1]
-    print(sum)
+inp = int(input())
+for i in range(inp):
+    a, b = map(int, sys.stdin.readline().split())
+    print(a + b)
