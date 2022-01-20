@@ -14,4 +14,5 @@ for i in range(C):
     for i in scores:
         if i > avrg:
             cnt += 1
+    # 소수점 3자리수까지 표기 & round()로 반올림
     print('{:.3f}%'.format(round(cnt / N * 100, 3)))
