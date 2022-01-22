@@ -263,3 +263,4 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/django,windows,macos,java,vue,vuejs
+BAEKJOON/BOJ_연습장.py
