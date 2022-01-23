@@ -1,19 +1,33 @@
-# 처음 짠 코드
-# 입력받는 자연수 N
-# N = input()
-#
-# if len(N) == 1:
-#     print(f'{int(N)}')
-# elif len(N) == 2:
-#     print(f'{int(N[0]) + int(N[1])}')
-# elif len(N) == 3:
-#     print(f'{int(N[0]) + int(N[1]) + int(N[2])}')
-# elif len(N) == 4:
-#     print(f'{int(N[0]) + int(N[1]) + int(N[2]) + int(N[3])}')
-# else:
-#     pass
+N = int(input())
 
-# 더 쉬운 코드
+total = 0
+for i in range(len(str(N))):
+    total += N % 10
+    N //= 10
+
+print(total)
+
+'''
+처음 짠 코드
+
+# 첫 번째
+#입력받는 자연수 N
+N = input()
+
+if len(N) == 1:
+    print(f'{int(N)}')
+elif len(N) == 2:
+    print(f'{int(N[0]) + int(N[1])}')
+elif len(N) == 3:
+    print(f'{int(N[0]) + int(N[1]) + int(N[2])}')
+elif len(N) == 4:
+    print(f'{int(N[0]) + int(N[1]) + int(N[2]) + int(N[3])}')
+else:
+    pass
+
+=> 입력받는 숫자의 자릿수에 따라 조건문을 따로 작성해줬다
+
+# 두 번째
 # 입력받은 자연수 N
 N = int(input())
 sum = 0
@@ -31,3 +45,8 @@ for i in range(0, 4):
     sum = sum + j
 
 print(sum)
+
+=> 제약 사항이란 입력값에 대해 주어진거라 코드에 따로 걸 필요가 없다
+=> 코드 구현은 똑같으나 += 혹은 //= 사용 등 최종이 훨씬 간결해졌다
+
+'''
