@@ -4,7 +4,7 @@
 import math
 import sys
 
-r = sys.stdin.readline()
+r = int(sys.stdin.readline())
 print(math.pi * r * r)
 print(2 * r * r )
 
