@@ -28,9 +28,6 @@ stack1.extend(stack2[::-1])
 print(''.join(stack1))
 
 
-
-
-
 '''
 # 시간 초과 (제한 0.3초)
 
