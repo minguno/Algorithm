@@ -8,21 +8,21 @@ di = [0, 1, 0, -1]
 dj = [1, 0, -1, 0]
 dir = 0
 
-I, J = map(int, input().split())
+C, R = map(int, input().split())
 
-arr = [[0 for _ in range(J)] for _ in range(I)]
+arr = [[0 for _ in range(R)] for _ in range(C)]
 K = int(input())
 
 arr[0][0] = 1
 i, j = 0, 0
 
-if K > I * J:
+if K > C * R:
     print(0)
 else:
     while arr[i][j] != K:
         ni = i + di[dir]
         nj = j + dj[dir]
-        if 0 <= ni < I and 0 <= nj < J and not arr[ni][nj]:
+        if 0 <= ni < C and 0 <= nj < R and not arr[ni][nj]:
             arr[ni][nj] = arr[i][j] + 1
             i, j = ni, nj
         else:
