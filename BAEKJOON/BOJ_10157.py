@@ -1,5 +1,34 @@
 # 자리배정
 # 공연장 크기가 주어졌을 때, K번째 관객이 배정될 좌석 번호(x, y) 반환하기
+# 좌석표를 시계방향으로 90도 회전하여 row가 j값이, column이 i값이 되게하기
+
+# 90도 회전한 arr에 대해
+# 우 하 좌 상
+di = [0, 1, 0, -1]
+dj = [1, 0, -1, 0]
+dir = 0
+
+I, J = map(int, input().split())
+
+arr = [[0 for _ in range(J)] for _ in range(I)]
+K = int(input())
+
+arr[0][0] = 1
+i, j = 0, 0
+
+if K > I * J:
+    print(0)
+else:
+    while arr[i][j] != K:
+        ni = i + di[dir]
+        nj = j + dj[dir]
+        if 0 <= ni < I and 0 <= nj < J and not arr[ni][nj]:
+            arr[ni][nj] = arr[i][j] + 1
+            i, j = ni, nj
+        else:
+            dir = (dir + 1) % 4
+
+    print(i + 1, j + 1)
 
 '''
 달팽이 수열 문제
@@ -24,18 +53,3 @@ r - 2 개
    for range(4) 돌려서 한 바퀴 돌아서 안에 들어오면 다시 0부터?
 
 '''
-from sys import stdin, stdout
-reader = stdin.readline
-writer = stdout.write
-
-c, r = map(int, reader().split())
-n = int(reader())
-
-# 예외 처리
-if n > c * r:
-    writer('0')
-elif n <= r:
-    writer(f'1, {n}')
-else:
-    # 시작 모서리값
-    edge = r
