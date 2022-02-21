@@ -23,9 +23,9 @@ print(count)
 
 # 방법 2
 
-count = sum(map(lambda x: all(x % j for j in range(2, x)) and x > 1, L))
-
-print(count)
+# count = sum(map(lambda x: all(x % j for j in range(2, x)) and x > 1, L))
+#
+# print(count)
 
 '''
 Implications...
