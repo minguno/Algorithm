@@ -6,8 +6,6 @@ arr = [[0 for _ in range(8)] for _ in range(8)]
 K, S, N = input().split()
 i, j = 8 - int(K[1]), ord(K[0]) - 65
 ii, jj = 8 - int(S[1]), ord(S[0]) - 65
-arr[i][j] = 1
-arr[ii][jj] = 1
 
 for _ in range(int(N)):
     move = input()
@@ -31,17 +29,13 @@ for _ in range(int(N)):
     ni, nj = i + delta[dir][0], j + delta[dir][1]
     nii, njj = ii + delta[dir][0], jj + delta[dir][1]
     if 0 <= ni < 8 and 0 <= nj < 8:
-        if arr[ni][nj]:
+        if ni == ii and nj == jj:
             if 0 <= nii < 8 and 0 <= njj < 8:
-                arr[ii][jj] = 0
                 ii, jj = nii, njj
-                arr[ii][jj] = 1
             else:
                 continue
-        arr[i][j] = 0
         i, j = ni, nj
-        arr[i][j] = 1
 
-solK = chr(j + 65) + str(abs(i - 8))
-solS = chr(jj + 65) + str(abs(ii - 8))
+solK = chr(j + 65) + str(8 - i)
+solS = chr(jj + 65) + str(8 - ii)
 print(solK, solS, sep='\n')
