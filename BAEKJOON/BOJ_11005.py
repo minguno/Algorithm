@@ -6,15 +6,16 @@
 num_dict = {k - ord('A') + 10: chr(k) for k in range(ord('A'), ord('Z') + 1)}
 N, K = map(int, input().split())
 sol = []
-md = 0
+# remainder 담을 변수
+rm = 0
 
 while N > 0:
-    md = N % K
+    rm = N % K
 
-    if md >= 10:
-        sol.append(num_dict[md])
+    if rm >= 10:
+        sol.append(num_dict[rm])
     else:
-        sol.append(md)
+        sol.append(rm)
     N //= K
 
 print(*sol[::-1], sep='')
