@@ -13,5 +13,4 @@ def perm(n, k, m):
 N, M = map(int, input().split())
 lst = [i for i in range(1, N + 1)]
 p = [0] * M
-vst = [0] * N
 perm(0, M, N)
