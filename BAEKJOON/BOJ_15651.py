@@ -4,10 +4,9 @@
 def perm(n, k, m):
     if n == k:
         print(*p)
-    else:
-        for i in range(m):
-            p[n] = lst[i]
-            perm(n + 1, k, m)
+    for i in range(m):
+        p[n] = lst[i]
+        perm(n + 1, k, m)
 
 
 N, M = map(int, input().split())
