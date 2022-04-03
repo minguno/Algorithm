@@ -8,9 +8,9 @@ def perm(n, p):
     if n == M:
         print(*p)
     for i in range(N):
-        perm(n + 1, p + lst[i])
+        perm(n + 1, p + [lst[i]])
 
 
 N, M = map(int, input().split())
-lst = [i for i in range(1, N + 1)]
+lst = [i + 1 for i in range(N)]
 perm(0, [])
